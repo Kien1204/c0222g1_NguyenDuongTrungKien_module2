@@ -8,10 +8,13 @@ public class TranslateNumberToLetter {
         String units = "";
         String dozens = "";
         String hundreds = "";
+
         int number = scanner.nextInt();
         int numberUnits = number % 10;
         int numberDozens = (number % 100) / 10;
         int numberHundreds = number / 100;
+
+
         switch (numberUnits) {
             case 1:
                 units = "one";
@@ -43,31 +46,31 @@ public class TranslateNumberToLetter {
         }
         switch (numberHundreds) {
             case 1:
-                hundreds = "one hundred " + " and ";
+                hundreds = "one hundred " ;
                 break;
             case 2:
-                hundreds = "two hundreds "  +  " and ";
+                hundreds = "two hundreds " ;
                 break;
             case 3:
-                hundreds = "three hundreds"  + " and ";
+                hundreds = "three hundreds" ;
                 break;
             case 4:
-                hundreds = "four hundreds"  + " and ";
+                hundreds = "four hundreds" ;
                 break;
             case 5:
-                hundreds = "five hundreds" + " and ";
+                hundreds = "five hundreds" ;
                 break;
             case 6:
-                hundreds = "six hundreds" + " and ";
+                hundreds = "six hundreds" ;
                 break;
             case 7:
-                hundreds = " seven hundreds" + "and";
+                hundreds = " seven hundreds" ;
                 break;
             case 8:
-                hundreds = " eight  hundreds" + " and  ";
+                hundreds = " eight  hundreds" ;
                 break;
             case 9:
-                hundreds = " nine  hundreds" + " and ";
+                hundreds = " nine  hundreds" ;
                 break;
         }
         if (numberDozens == 1) {
