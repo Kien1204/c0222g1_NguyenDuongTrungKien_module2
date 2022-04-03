@@ -2,29 +2,29 @@ package _03_array.exercise;
 
 import java.util.Scanner;
 
-public class FindMin {
+public class FindMinElement {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("nhập số phần tử ");
         int n = scanner.nextInt();
 
-        int [] Arr = new int[n];
+        int [] array = new int[n];
 
         System.out.println("nhập vào mảng các phần tử");
         for (int i = 0; i < n ; i++) {
             System.out.print ("Arr["+i +"]" );
-            Arr[i]=scanner.nextInt();
+            array[i]=scanner.nextInt();
         }
         System.out.println("Mang vua nhap la:");
         for (int i = 0; i < n; i++) {
-            System.out.print (Arr[i] + "\t");
+            System.out.print (array[i] + "\t");
 
         }
-        int min = Arr[0];
+        int min = array[0];
         for (int i = 0; i < n ; i++) {
-         if (min> Arr[i]){
-             min = Arr[i];
+         if (min> array[i]){
+             min = array[i];
          }
         }
         System.out.println();
