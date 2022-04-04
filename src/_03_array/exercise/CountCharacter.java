@@ -2,7 +2,7 @@ package _03_array.exercise;
 
 import java.util.Scanner;
 
-public class Count {
+public class CountCharacter {
     public static void main(String[] args) {
         String string = "nguyen duong trung kien";
         String str1 = "i am a development";
