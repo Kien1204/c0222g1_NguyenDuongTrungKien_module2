@@ -4,28 +4,33 @@ import java.util.Scanner;
 
 public class FindMaxElementIn2dArray {
     public static void main(String[] args) {
-        int m, n;
+        int column, row;
         Scanner scanner = new Scanner(System.in);
-        System.out.println(" nhập số m");
-        m = scanner.nextInt();
-        System.out.println("nhập số n");
-        n = scanner.nextInt();
-        int array[][] = new int[m][n];
-        System.out.println ("nhập các phần tử cho m,n");
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                System.out.print ("A[" + i + "] [" + j + "] =");
+        System.out.println(" enter column");
+        column = scanner.nextInt();
+        System.out.println("enter row");
+        row = scanner.nextInt();
+        int [][] array = new int[column][row];
+        System.out.println("enter element for column and row");
+        for (int i = 0; i < column; i++) {
+            for (int j = 0; j < row; j++) {
+                System.out.print("A[" + i + "] [" + j + "] =");
                 array[i][j] = scanner.nextInt();
             }
         }
-            int max = array[0][0];
-            for (int i = 0; i < m; i++) {
-                for (int j = 0; j < n; j++) {
-                    if (max < array[i][j]) {
-                      max = array[i][j];
-                    }
+         int max= findMaxElementIn2dArray(array,column,row);
+        System.out.println(max);
+    }
+
+    public static int findMaxElementIn2dArray(int[][] array, int column, int row) {
+       int max = array[0][0];
+        for (int i = 0; i < column; i++) {
+            for (int j = 0; j < row; j++) {
+                if (max < array[i][j]) {
+                    max = array[i][j];
                 }
             }
-        System.out.println("giá trị lớn nhất trong mảng là " + max);
         }
+        return max;
     }
+}

@@ -2,10 +2,18 @@ package _01_introduction_to_java.exercise;
 
 public class test {
     public static void main(String[] args) {
-        int i=2;
-        for( ; i <= 5; i++){
-            System.out.println("Hello");
-        }
+        int a = 100;
+        m(a);
+        System.out.println(a);
     }
+
+    static void m(int x) {
+        x = 200;
     }
+
+}
+
+
+
+
 

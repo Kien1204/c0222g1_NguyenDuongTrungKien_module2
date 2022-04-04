@@ -4,37 +4,35 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class DeleteValue {
-    public static void main(String[] args) {
-        int addNumber, i;
-        Scanner scanner = new Scanner(System.in);
-        do {
-            System.out.println("Nhập vào số phần tử của mảng: ");
-            addNumber = scanner.nextInt();
-        } while (addNumber <= 0);
-
-        int [] array = new int[addNumber];
-        System.out.println("Nhập các phần tử cho mảng: ");
-        for (i = 0; i < addNumber; i++) {
-            System.out.print("Nhập phần tử thứ " + i + ": ");
-            array[i] = scanner.nextInt();
-        }
-        System.out.println(Arrays.toString(array));
-        System.out.println("Nhập số nguyên k: ");
-
-        int deleteNumber = scanner.nextInt();
-        for (int j = 0; j < addNumber; j++) {
-            if (array[j] == deleteNumber) {
-                for (int l = j; l < addNumber; l++, j++) {
-                    if (l == addNumber - 1) {
-                        array[array.length-1]=0;
-                        break;
-                    }
-                    array[j] = array[j + 1];
-                }
-                break;
+    public static int[] deleteValue(int [] array,int addNumber ) {
+        int index = 0 ;
+        for (int i = 0; i < array.length ; i++) {
+            if (array[i]== addNumber){
+                index=i ;
             }
         }
-        System.out.println(Arrays.toString(array));
+        for (int i = index; i < array.length ; i++) {
+            if (i==array.length-1){
+                break;
+            }
+            array[i]=array[i+1];
+        }
+        array[array.length-1]=0;
+        return  array ;
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("nhập độ dài cho mảng ");
+        int size  = scanner.nextInt();
+        int [] array = new int[size];
+        System.out.println("nhập giá trị cho mảng");
+        for (int i = 0; i < size; i++) {
+            System.out.println("nhập phần tử" +  i );
+            array[i]= scanner.nextInt();
+        }
+        System.out.println(" nhập vào số muốn xóa ");
+        int addNumber = scanner.nextInt();
+        System.out.println(Arrays.toString(deleteValue(array,addNumber )));
     }
 }
 
