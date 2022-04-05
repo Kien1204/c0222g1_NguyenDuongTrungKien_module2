@@ -6,31 +6,31 @@ import java.util.Scanner;
 public class CalculateTotalColumns {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int column, row;
-        System.out.println("nhập column");
-        column = scanner.nextInt();
-        System.out.println("nhập row ");
-        row = scanner.nextInt();
-        int [][] array = new int[column][row];
+        int Column, Row;
+        System.out.println("nhập Column");
+        Column = scanner.nextInt();
+        System.out.println("nhập Row ");
+        Row = scanner.nextInt();
+        int [][] Array = new int[Column][Row];
         System.out.println("nhập phần tử cho column và row");
-        for (int i = 0; i < column; i++) {
-            for (int j = 0; j < row; j++) {
+        for (int i = 0; i < Column; i++) {
+            for (int j = 0; j < Row; j++) {
                 System.out.print("A[" + i + "][" + j + "]");
-                array[i][j] = scanner.nextInt();
+                Array[i][j] = scanner.nextInt();
             }
         }
         System.out.println("nhập vị trí của cột muốn tính");
         int indexColumn = scanner.nextInt();
-        int sum = calculateTotalColumn(indexColumn, column, array);
-        System.out.println("sum: " + sum);
+        int Sum = calculateTotalColumn(indexColumn, Column, Array);
+        System.out.println("sum: " + Sum);
 
     }
-    public static int calculateTotalColumn(int indexColumn, int column, int[][]array){
-        int sum = 0;
-        for (int i = 0; i < column ; i++) {
-            sum+=array[i][indexColumn];
+    public static int calculateTotalColumn(int indexColumn, int Column, int[][]Array){
+        int Sum = 0;
+        for (int i = 0; i < Column ; i++) {
+            Sum+=Array[i][indexColumn];
         }
-        return sum;
+        return Sum;
     }
 
 

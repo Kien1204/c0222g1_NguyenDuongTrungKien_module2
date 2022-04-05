@@ -4,17 +4,17 @@ import java.util.Scanner;
 
 public class DisplayPrimeLessThan100 {
     public static void main(String[] args) {
-        int count;
+        int Count;
         int countPrime = 0;
         int n = 2;
         while (n <100 ) {
-             count = 0;
+             Count = 0;
             for (int i = 2; i < n; i++) {
                 if (n%i == 0) {
-                    count++;
+                    Count++;
                 }
             }
-            if (count == 0) {
+            if (Count == 0) {
                 countPrime++;
                 System.out.println("số nguyên tố nhỏ hơn 100 là " + n);
             }

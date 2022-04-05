@@ -4,33 +4,33 @@ import java.util.Scanner;
 
 public class FindMaxElementIn2dArray {
     public static void main(String[] args) {
-        int column, row;
+        int Column, Row;
         Scanner scanner = new Scanner(System.in);
-        System.out.println(" enter column");
-        column = scanner.nextInt();
-        System.out.println("enter row");
-        row = scanner.nextInt();
-        int [][] array = new int[column][row];
+        System.out.println(" enter Column");
+        Column = scanner.nextInt();
+        System.out.println("enter Row");
+        Row = scanner.nextInt();
+        int [][] Array = new int[Column][Row];
         System.out.println("enter element for column and row");
-        for (int i = 0; i < column; i++) {
-            for (int j = 0; j < row; j++) {
+        for (int i = 0; i < Column; i++) {
+            for (int j = 0; j < Row; j++) {
                 System.out.print("A[" + i + "] [" + j + "] =");
-                array[i][j] = scanner.nextInt();
+                Array[i][j] = scanner.nextInt();
             }
         }
-         int max= findMaxElementIn2dArray(array,column,row);
-        System.out.println(max);
+         int Max= findMaxElementIn2dArray(Array,Column,Row);
+        System.out.println(Max);
     }
 
-    public static int findMaxElementIn2dArray(int[][] array, int column, int row) {
-       int max = array[0][0];
-        for (int i = 0; i < column; i++) {
-            for (int j = 0; j < row; j++) {
-                if (max < array[i][j]) {
-                    max = array[i][j];
+    public static int findMaxElementIn2dArray(int[][] Array, int Column, int Row) {
+       int Max = Array[0][0];
+        for (int i = 0; i < Column; i++) {
+            for (int j = 0; j < Row; j++) {
+                if (Max < Array[i][j]) {
+                    Max = Array[i][j];
                 }
             }
         }
-        return max;
+        return Max;
     }
 }

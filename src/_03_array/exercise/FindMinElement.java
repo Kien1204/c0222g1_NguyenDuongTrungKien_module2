@@ -8,25 +8,25 @@ public class FindMinElement {
         Scanner scanner = new Scanner(System.in);
         System.out.println("nhập số phần tử ");
         int element = scanner.nextInt();
-        int [] array = new int[element];
+        int [] Array = new int[element];
         System.out.println("nhập vào mảng các phần tử");
         for (int i = 0; i < element ; i++) {
-            System.out.print ("Arr["+i +"]" );
-            array[i]=scanner.nextInt();
+            System.out.print ("Array["+i +"]" );
+            Array[i]=scanner.nextInt();
         }
 //        System.out.println("Mang vua nhap la:");
 //        for (int i = 0; i < element; i++) {
-//            System.out.print (array[i] + "\t");
+//            System.out.print (Array[i] + "\t");
 //        }
-        int min = findMinElement(array,element);
+        int min = findMinElement(Array,element);
         System.out.println(min);
 
     }
-    public static int findMinElement(int []array,int element){
-       int min = array[0];
+    public static int findMinElement(int []Array,int element){
+       int min = Array[0];
         for (int i = 0; i < element  ; i++) {
-            if (min> array[i]){
-                min = array[i];
+            if (min> Array[i]){
+                min = Array[i];
             }
         }
         return min;

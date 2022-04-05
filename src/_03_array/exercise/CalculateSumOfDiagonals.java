@@ -5,36 +5,36 @@ import java.util.Scanner;
 public class CalculateSumOfDiagonals {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int column, row;
+        int Column, Row;
         System.out.println("enter column");
-        column = scanner.nextInt();
+        Column = scanner.nextInt();
         System.out.println("enter row ");
-        row = scanner.nextInt();
-        int[][] array = new int[column][row];
+        Row = scanner.nextInt();
+        int[][] Array = new int[Column][Row];
         System.out.println("enter m and n");
-        for (int i = 0; i < column; i++) {
-            for (int j = 0; j < row; j++) {
+        for (int i = 0; i < Column; i++) {
+            for (int j = 0; j < Row; j++) {
                 System.out.print("A[" + i + "][" + j + "]");
-                array[i][j] = scanner.nextInt();
+                Array[i][j] = scanner.nextInt();
             }
         }
-        System.out.println(calculateTotalDiagonals1(column,array,row));
-        System.out.println(calculateTotalDiagonals2(column,array,row));
+        System.out.println(calculateTotalDiagonals1(Column,Array,Row));
+        System.out.println(calculateTotalDiagonals2(Column,Array,Row));
     }
 
-    public static int calculateTotalDiagonals1(int columns, int[][] array, int row) {
-        int sum1 = 0;
-        for (int i = 0, j = columns - 1; i < row; i++, j--) {
-            sum1 += array[i][i];
+    public static int calculateTotalDiagonals1(int Columns, int[][] Array, int Row) {
+        int Sum1 = 0;
+        for (int i = 0, j = Columns - 1; i < Row; i++, j--) {
+            Sum1 += Array[i][i];
         }
-        return sum1;
+        return Sum1;
     }
 
-    public static int calculateTotalDiagonals2(int columns, int[][] array, int row) {
-        int sum2 = 0;
-        for (int i = 0, j = columns - 1; i < row; i++, j--) {
-            sum2 += array[i][j];
+    public static int calculateTotalDiagonals2(int Columns, int[][] Array, int Row) {
+        int Sum2 = 0;
+        for (int i = 0, j = Columns - 1; i < Row; i++, j--) {
+            Sum2 += Array[i][j];
         }
-        return sum2;
+        return Sum2;
     }
 }

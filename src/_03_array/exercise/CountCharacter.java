@@ -4,21 +4,21 @@ import java.util.Scanner;
 
 public class CountCharacter {
     public static void main(String[] args) {
-        String string = "nguyen duong trung kien";
-        String str1 = "i am a development";
+        String String = "nguyen duong trung kien";
+        String Str1 = "i am a development";
 //        System.out.println(countCharacter(string));
-        System.out.println(countCharacter(str1));
+        System.out.println(countCharacter(Str1));
     }
-    public static int countCharacter(String str){
+    public static int countCharacter(String Str){
         Scanner sc = new Scanner(System.in);
         System.out.println("enter the character " );
-        char keyword = sc.next().charAt(0);
-        int count = 0;
-        for (int i = 0; i <str.length() ; i++) {
-            if (keyword==str.charAt(i)){
-                count++;
+        char Keyword = sc.next().charAt(0);
+        int Count = 0;
+        for (int i = 0; i <Str.length() ; i++) {
+            if (Keyword==Str.charAt(i)){
+                Count++;
             }
         }
-        return count;
+        return Count;
     }
 }
