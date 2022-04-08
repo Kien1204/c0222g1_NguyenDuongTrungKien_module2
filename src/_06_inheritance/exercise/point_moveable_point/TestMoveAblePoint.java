@@ -1,4 +1,4 @@
-package _06_inheritance.exercise.point_moveablePoint;
+package _06_inheritance.exercise.point_moveable_point;
 
 public class TestMoveAblePoint {
     public static void main(String[] args) {
