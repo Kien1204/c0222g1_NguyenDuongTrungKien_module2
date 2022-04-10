@@ -1,40 +1,12 @@
 package exercise_mr_chien.Student1;
 
-public class Student {
-    private String name ;
-    private String address;
-    private int  age;
+public class Student extends Person{
     private double point;
+    private String address;
 
-    public Student(String name, String address, int age, double point) {
-        this.name = name;
-        this.address = address;
-        this.age = age;
+    public Student(String name, int age, boolean gender, double point) {
+        super(name, age, gender);
         this.point = point;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public double getPoint() {
@@ -45,14 +17,14 @@ public class Student {
         this.point = point;
     }
 
+
     @Override
     public String toString() {
-        return "Student{" +
-                "name='" + getName() + '\'' +
-                ", address='" + getAddress() + '\'' +
-                ", age=" + getAge() +
-                ", point=" + getPoint() +
+        return "Student{" + super.toString()+
+                "point=" + point +
+                ", address='" + address + '\'' +
                 '}';
     }
 }
+
 
