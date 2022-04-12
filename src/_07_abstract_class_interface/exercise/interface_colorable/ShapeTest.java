@@ -9,7 +9,7 @@ public class ShapeTest {
         shapes[1]=new Square("yellow","big",20);
         for (Shape item: shapes) {
             System.out.println(item);
-            if (item instanceof Square ){
+            if (item instanceof Colorable ){
                 Square square = (Square) item ;
                 square.howToColor();
             }

@@ -1,6 +1,6 @@
 package _07_abstract_class_interface.exercise.interface_colorable;
 
-public abstract class Shape implements Colorable{
+public abstract class Shape {
     private String color ;
     private  String filled ;
 
@@ -36,8 +36,4 @@ public abstract class Shape implements Colorable{
                 '}';
     }
 
-    @Override
-    public void howToColor() {
-
-    }
 }
