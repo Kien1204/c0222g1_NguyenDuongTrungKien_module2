@@ -1,4 +1,4 @@
-package _08_clean_code;
+package _08_clean_code.exercise;
 
 public class TennisGame {
     public static final int ADVANTAGE1 = 1;
