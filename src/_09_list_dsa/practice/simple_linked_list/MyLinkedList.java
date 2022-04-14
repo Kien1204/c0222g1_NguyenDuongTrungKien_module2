@@ -4,9 +4,7 @@ public class MyLinkedList {
     private  Node head;
     private  int numNodes;
 
-    public MyLinkedList(Object data) {
-        head = new Node(data);
-    }
+    public MyLinkedList(Object data) { head = new Node(data); }
 
     private class Node {
         private Node next;
