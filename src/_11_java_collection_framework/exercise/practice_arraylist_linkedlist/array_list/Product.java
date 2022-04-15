@@ -1,4 +1,4 @@
-package _11_java_collection_framework.exercise.practice_arraylist_linkedlist.linkedlist;
+package _11_java_collection_framework.exercise.practice_arraylist_linkedlist.array_list;
 
 public class Product {
     private String productName ;

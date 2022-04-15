@@ -1,10 +1,10 @@
-package _11_java_collection_framework.exercise.practice_arraylist_linkedlist.linkedlist;
+package _11_java_collection_framework.exercise.practice_arraylist_linkedlist.array_list;
 
 import java.util.*;
 
 public class ProductManager {
 
-    public static void addProduct( LinkedList<Product> products) {
+    public static void addProduct( List<Product> products) {
         Scanner sc = new Scanner(System.in);
         System.out.println("nhập tên sản phẩm: ");
         String productName=(sc.nextLine());
@@ -16,7 +16,7 @@ public class ProductManager {
         products.add(product);
     }
 
-    public static void editProduct(LinkedList<Product> products) {
+    public static void editProduct(List<Product> products) {
         Scanner scanner = new Scanner(System.in);
         boolean flag = false;
         System.out.println("Nhập ID sản phẩm muốn sửa");
@@ -35,7 +35,7 @@ public class ProductManager {
         }
     }
 
-    public static void removeProduct(LinkedList<Product> products) {
+    public static void removeProduct(List<Product> products) {
         Scanner sc = new Scanner(System.in);
         System.out.println("nhập id muốn xóa : ");
         int id = sc.nextInt();
@@ -54,7 +54,7 @@ public class ProductManager {
     }
 
 
-    public static void showProduct(LinkedList <Product> products) {
+    public static void showProduct(List <Product> products) {
         if (products.size() == 0) {
             System.out.println("không có sản phẩm ");
         } else {
@@ -65,7 +65,7 @@ public class ProductManager {
     }
 
 
-    public static void searchProduct(LinkedList<Product> products) {
+    public static void searchProduct(List<Product> products) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("nhập tên sản phẩm bạn muốn tìm : ");
         String p = scanner.nextLine();
@@ -83,7 +83,7 @@ public class ProductManager {
     }
 
 
-    public static void ascending(LinkedList<Product> products){
+    public static void ascending(List<Product> products){
         Collections.sort(products, new Comparator<Product>() {
             @Override
             public int compare(Product o1, Product o2) {
@@ -91,7 +91,7 @@ public class ProductManager {
             }
         });
     }
-    public static void descending(LinkedList<Product> products) {
+    public static void descending(List<Product> products) {
         Collections.sort(products, new Comparator<Product>() {
             @Override
             public int compare(Product o1, Product o2) {

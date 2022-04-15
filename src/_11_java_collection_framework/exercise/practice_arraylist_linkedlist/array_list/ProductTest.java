@@ -1,4 +1,4 @@
-package _11_java_collection_framework.exercise.practice_arraylist_linkedlist.arraylist;
+package _11_java_collection_framework.exercise.practice_arraylist_linkedlist.array_list;
 
 import java.util.ArrayList;
 import java.util.List;

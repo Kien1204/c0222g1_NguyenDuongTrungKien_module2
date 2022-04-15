@@ -1,8 +1,6 @@
-package _11_java_collection_framework.exercise.practice_arraylist_linkedlist.linkedlist;
+package _11_java_collection_framework.exercise.practice_arraylist_linkedlist.linked_list;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Scanner;
 
 public class ProductTest {
