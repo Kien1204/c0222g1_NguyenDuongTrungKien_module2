@@ -5,7 +5,7 @@ public class MyLinkedList {
     private int numNode;
     private boolean flag;
 
-    public class Node {
+    private class Node {
         private Node next;
         private Object data;
 
