@@ -21,7 +21,7 @@ public class MyArrayListTest {
         System.out.println(clone.get(3));
         System.out.println(clone.size());
 
-        
+
         clone.clear();
         System.out.println(clone.size());
         System.out.println(Arrays.toString(clone.getElements()));
