@@ -28,7 +28,7 @@ public class ProductManager {
                 data.setProductName(scanner.nextLine());
                 System.out.println("nhập giá sản phẩm");
                 data.setPrice(Integer.parseInt(scanner.nextLine()));
-            }
+            } break;
         }
         if (!flag) {
             System.out.println("không có thông tin");
@@ -45,7 +45,7 @@ public class ProductManager {
             if (product.getIdProduct() == id) {
                 temp = product;
                 flag = true;
-            }
+            } break;
         }
         if (flag == false) {
             System.out.println("không tìm thấy thông tin");
@@ -71,7 +71,7 @@ public class ProductManager {
         String p = scanner.nextLine();
         int count = 0 ;
             for (Product product : products) {
-                if (product.getProductName().equals(p)) {
+                if (product.getProductName().contains(p)) {
                     System.out.println("Có sản phẩm " + product.getProductName());
                     System.out.println(product.toString());
                     count++;

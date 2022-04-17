@@ -10,13 +10,15 @@ public class CountWord {
         Scanner scanner = new Scanner(System.in);
         System.out.println("nhập vào một chuỗi ");
         String str  = scanner.nextLine();
-        String [] array = str.toLowerCase().split(" ");
+        String [] array = str.toLowerCase().split(" "); // tách chuỗi thành từng từ rồi đưa vào mảng
         System.out.println(Arrays.toString(array));
+
+
         Map<String, Integer> element = new TreeMap<>();
         for (int i = 0; i < array.length; i++) {
             if (!element.containsKey(array[i])) {
                 element.put(array[i], 1);
-                // nếu phần tử không tồn tại thì put phần tử vào mảng arr với giá trị là 1
+                // nếu phần tử không tồn tại thì thêm phần tử vào mảng arr với giá trị là 1
             } else {
                 int strValue = element.get(array[i]) + 1;
                 element.put(array[i], strValue);

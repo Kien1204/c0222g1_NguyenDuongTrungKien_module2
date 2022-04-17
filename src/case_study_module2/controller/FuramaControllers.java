@@ -1,5 +1,7 @@
 package case_study_module2.controller;
 
+import case_study_module2.service.impl.EmployeeServiceImpl;
+
 import java.util.Scanner;
 
 public class FuramaControllers {
@@ -28,17 +30,31 @@ public class FuramaControllers {
     }
 
     public static void displayEmployeeMenu() {
+        EmployeeServiceImpl employeeService =  new EmployeeServiceImpl();
         boolean check = true;
         while (true) {
             System.out.println("1.Display list employee");
             System.out.println("2.Add new employee");
             System.out.println("3.Edit employee");
-            System.out.println("4.Back to menu");
+            System.out.println("4.delete employee");
+            System.out.println("5.Back to menu");
             Scanner scanner = new Scanner(System.in);
             switch (scanner.nextInt()) {
                 case 1: {
+                    employeeService.display();
+                    break;
                 }
+                case 2 :
+                    employeeService.addNew();
+                    break;
+                case 3:
+                    employeeService.edit();
+                    break;
+                case 4:
+                    employeeService.delete();
+                    break;
             }
+
         }
     }
 }
