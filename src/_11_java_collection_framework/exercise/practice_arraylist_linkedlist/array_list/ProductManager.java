@@ -6,14 +6,25 @@ public class ProductManager {
 
     public static void addProduct( List<Product> products) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("nhập tên sản phẩm: ");
-        String productName=(sc.nextLine());
+
         System.out.println("nhập ID : ");
         int id = (sc.nextInt());
-        System.out.println("nhập giá : ");
-        int priceProduct=(sc.nextInt());
-        Product product = new Product(productName,id,priceProduct);
-        products.add(product);
+        boolean check = true ;
+        for (int i = 0; i <products.size() ; i++) {
+            if(products.get(i).getIdProduct()==id){
+                check=false;
+                System.out.println("đã có sản phẩm này ");
+                break;
+            }else {
+                System.out.println("nhập tên sản phẩm: ");
+                String productName=(sc.nextLine());
+                System.out.println("nhập giá : ");
+                int priceProduct=(sc.nextInt());
+
+                Product product = new Product(productName,id,priceProduct);
+                products.add(product);
+            }
+        }
     }
 
     public static void editProduct(List<Product> products) {
@@ -28,7 +39,8 @@ public class ProductManager {
                 data.setProductName(scanner.nextLine());
                 System.out.println("nhập giá sản phẩm");
                 data.setPrice(Integer.parseInt(scanner.nextLine()));
-            } break;
+            }
+            break;
         }
         if (!flag) {
             System.out.println("không có thông tin");

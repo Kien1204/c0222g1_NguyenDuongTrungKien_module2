@@ -9,9 +9,11 @@ public class ReverseString {
         System.out.println("nhập vào chuỗi");
         Scanner sc = new Scanner(System.in);
         String string = sc.nextLine();
+
         String[] arr = string.split(" ");
         for (int i = 0; i < arr.length; i++) {
             str.push(arr[i]);
+            // thêm phần tử của mảng vào stack
         }
         for (int i = 0; i < arr.length; i++) {
             arr[i] = str.pop();

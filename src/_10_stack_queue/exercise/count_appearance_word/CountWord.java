@@ -22,6 +22,7 @@ public class CountWord {
             } else {
                 int strValue = element.get(array[i]) + 1;
                 element.put(array[i], strValue);
+                // nếu đã tồn tại thì cộng phần tử đó lên 1
             }
         }
         System.out.println(element);
