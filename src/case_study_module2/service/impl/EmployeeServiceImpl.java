@@ -134,9 +134,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void edit() {
-
+        System.out.println("nhập vào id muốn chỉnh sửa");
         boolean check = false;
-        int idEmployee = scanner.nextInt();
+        int idEmployee = Integer.parseInt(scanner.nextLine());
         for (Employee e : employeeList) {
             if (e.getId() == idEmployee) {
                 check = true;
