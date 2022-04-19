@@ -4,7 +4,6 @@ public class Person {
     private int id ;
     private String name;
     private int age;
-    private String address;
     private String sex ;
 
     public Person() {
@@ -14,7 +13,6 @@ public class Person {
         this.id = id;
         this.name = name;
         this.age = age;
-        this.address = address;
         this.sex = sex;
 
     }
@@ -43,13 +41,6 @@ public class Person {
         this.age = age;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
 
     public String getSex() {
         return sex;
@@ -61,12 +52,11 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "id=" + id +
+        return
+               " :"+ "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
-                ", address='" + address + '\'' +
-                ", sex='" + sex + '\'' +
-                '}';
+                ", address='" + '\'' +
+                ", sex='" + sex + " ," + '\'';
     }
 }

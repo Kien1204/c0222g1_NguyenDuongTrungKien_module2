@@ -8,8 +8,8 @@ import java.util.Queue;
 
 public class MainTest {
     public static void main(String[] args) {
-        Queue<Customer> Nam = new LinkedList<>();
-        Queue<Customer> Nu = new LinkedList<>();
+        Queue<Customer> male = new LinkedList<>();
+        Queue<Customer> female = new LinkedList<>();
 
         Customer[] customers = new Customer[5] ;
         customers[0] = new Customer("Kien", false, 18);
@@ -20,17 +20,17 @@ public class MainTest {
 
         for (Customer item : customers) {
             if (item.isGender()){
-                Nam.add(item);
+                male.add(item);
             } else {
-                Nu.add(item);
+                female.add(item);
             }
         }
         List<Customer> orderedList = new ArrayList<>();
-        while (Nu.size() > 0){
-            orderedList.add(Nu.remove());
+        while (female.size() > 0){
+            orderedList.add(female.remove());
         }
-        while (Nam.size() > 0){
-            orderedList.add(Nam.remove());
+        while (male.size() > 0){
+            orderedList.add(male.remove());
         }
         for (Customer item: orderedList) {
             System.out.println(item.toString());

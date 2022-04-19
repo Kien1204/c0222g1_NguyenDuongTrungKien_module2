@@ -5,6 +5,7 @@ public class Employee extends Person {
     private String position;
     private int salary;
     private String idCard;
+    private String address ;
     private String email;
 
 
@@ -13,12 +14,12 @@ public class Employee extends Person {
     public Employee(int id,
                     String name,
                     int age,
-                    String address,
                     String sex,
                     String level,
                     String position,
                     int salary,
                     String idCard,
+                    String address,
                     String email) {
         super(id, name, age, address, sex);
         this.level = level;
@@ -51,12 +52,21 @@ public class Employee extends Person {
     public void setSalary(int salary) {
         this.salary = salary;
     }
+
     public String getIdCard() {
         return idCard;
     }
 
     public void setIdCard(String idCard) {
         this.idCard = idCard;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getEmail() {
@@ -74,6 +84,7 @@ public class Employee extends Person {
                 ", position='" + position + '\'' +
                 ", salary=" + salary +
                 ", idCard='" + idCard + '\'' +
+                ", address='" + address + '\'' +
                 ", email='" + email + '\'' +
                 '}';
     }
