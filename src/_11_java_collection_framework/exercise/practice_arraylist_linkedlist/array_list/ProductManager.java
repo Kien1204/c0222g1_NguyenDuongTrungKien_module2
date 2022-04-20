@@ -8,22 +8,23 @@ public class ProductManager {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("nhập ID : ");
-        int id = (sc.nextInt());
+        int id = Integer.parseInt(sc.nextLine()) ;
         boolean check = true ;
         for (int i = 0; i <products.size() ; i++) {
             if(products.get(i).getIdProduct()==id){
-                check=false;
                 System.out.println("đã có sản phẩm này ");
+                check=false;
                 break;
-            }else {
-                System.out.println("nhập tên sản phẩm: ");
-                String productName=(sc.nextLine());
-                System.out.println("nhập giá : ");
-                int priceProduct=(sc.nextInt());
-
-                Product product = new Product(productName,id,priceProduct);
-                products.add(product);
             }
+
+        }
+        if (check ){
+            System.out.println("nhập tên sản phẩm: ");
+            String productName=(sc.nextLine());
+            System.out.println("nhập giá : ");
+            int priceProduct=(sc.nextInt());
+            Product product = new Product(productName,id,priceProduct);
+            products.add(product);
         }
     }
 
@@ -31,16 +32,19 @@ public class ProductManager {
         Scanner scanner = new Scanner(System.in);
         boolean flag = false;
         System.out.println("Nhập ID sản phẩm muốn sửa");
-        int productID = scanner.nextInt();
+        int productID = Integer.parseInt(scanner.nextLine()) ;
         for (Product data : products) {
             if (data.getIdProduct() == productID) {
                 flag = true;
-                System.out.println("nhập thông tin sản phẩm");
+                System.out.println("nhập Id sản phẩm mới :");
+                data.setIdProduct(Integer.parseInt(scanner.nextLine()));
+                System.out.println("nhập thông tin sản phẩm mới :");
                 data.setProductName(scanner.nextLine());
                 System.out.println("nhập giá sản phẩm");
                 data.setPrice(Integer.parseInt(scanner.nextLine()));
+                break;
             }
-            break;
+
         }
         if (!flag) {
             System.out.println("không có thông tin");
@@ -53,18 +57,21 @@ public class ProductManager {
         int id = sc.nextInt();
         boolean flag = false;
         Product temp = new Product();
-        for (Product product : products) {
-            if (product.getIdProduct() == id) {
-                temp = product;
-                flag = true;
-            } break;
+        if (products.isEmpty()) {
+            System.out.println("Không có để sửa");
+            for (Product product : products) {
+                if (product.getIdProduct() == id) {
+                    temp = product;
+                    flag = true;
+                    break;
+                }
+            }
+            if (flag == false) {
+                System.out.println("không tìm thấy thông tin");
+            }
+            products.remove(temp);
         }
-        if (flag == false) {
-            System.out.println("không tìm thấy thông tin");
-        }
-        products.remove(temp);
     }
-
 
     public static void showProduct(List <Product> products) {
         if (products.size() == 0) {

@@ -10,8 +10,10 @@ public class ProductTest {
         List<Product> product = new ArrayList<>();
         Product product1 = new Product("pepsi",1,100000);
         Product product2 = new Product("coca",2,15000);
+        Product product3 = new Product("cocacôcala",3,1500000);
         product.add(product1);
         product.add(product2);
+        product.add(product3);
         while (true) {
             System.out.println("-------List Product-------");
             System.out.println("1. Add products");
@@ -23,7 +25,7 @@ public class ProductTest {
             System.out.println("7. Sort products by cost descending");
             System.out.println("8. Exit");
             System.out.println("Enter your choice: ");
-            int choice = scanner.nextInt();
+            int choice = Integer.parseInt(scanner.nextLine());
 
             switch (choice) {
                 case 1:
