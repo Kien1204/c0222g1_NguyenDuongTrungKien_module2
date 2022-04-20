@@ -151,13 +151,78 @@ public class EmployeeServiceImpl implements EmployeeService {
 
                 System.out.println("nhập giới tính  ");
                 e.setSex(scanner.nextLine());
-
                 System.out.println("nhập level ");
-                e.setLevel(scanner.nextLine());
 
+                String level = "";
+                System.out.println("1. Trung cấp");
+                System.out.println("2. Cao đẳng ");
+                System.out.println("3. Đại học");
+                System.out.println("4. Sau đại học");
+
+
+                int choose = Integer.parseInt(scanner.nextLine());
+                boolean check1 = true;
+
+                while (check1) {
+                    switch (choose) {
+                        case 1:
+                            level += "Trung cấp";
+                            check1 = false;
+                            break;
+                        case 2:
+                            level += "Cao đẳng";
+                            check1 = false;
+                            break;
+                        case 3:
+                            level += "Đại học";
+                            check1 = false;
+                            break;
+                        case 4:
+                            level += "Sau đại học";
+                            check1 = false;
+                            break;
+
+                        default:
+                            System.out.println("mời nhập lại");
+                    }
+                }
+                e.setLevel(level);
 
                 System.out.println("nhập vị trí ");
-                e.setPosition(scanner.nextLine());
+                String position = " ";
+                System.out.println("1.Receptionist");
+                System.out.println("2.Waiter  ");
+                System.out.println("3.Supervisor");
+                System.out.println("4.Manager");
+                System.out.println("5.Director");
+
+                int choose1 = Integer.parseInt(scanner.nextLine());
+                boolean check2 = true;
+                while (check2) {
+                    switch (choose1) {
+                        case 1:
+                            position += "Receptionist";
+                            check2 = false;
+                            break;
+                        case 2:
+                            position += "Waiter  ";
+                            check2 = false;
+                            break;
+                        case 3:
+                            position += "Supervisor";
+                            check2 = false;
+                            break;
+                        case 4:
+                            position += "Manager";
+                            check2 = false;
+                            break;
+                        case 5:
+                            position += "Director";
+                            check2= false;
+                            break;
+                    }
+                }
+                e.setPosition(position);
 
 
                 System.out.println("nhập lương ");
@@ -171,9 +236,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
                 System.out.println("nhập địa chỉ");
                 e.setAddress(scanner.nextLine());
+
+                break;
             }
         }
-
     }
 
     @Override
