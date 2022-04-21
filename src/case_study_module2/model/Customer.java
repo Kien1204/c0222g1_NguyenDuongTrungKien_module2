@@ -3,8 +3,7 @@ package case_study_module2.model;
 public class Customer extends Person {
     private String typeCustomer;
     private String address;
-
-
+    private String idCard;
 
     public Customer() {
     }
@@ -17,6 +16,7 @@ public class Customer extends Person {
                     String address) {
         super(id, name, age, address, sex);
         this.typeCustomer = typeCustomer;
+        this.address=address;
     }
 
 
@@ -26,6 +26,14 @@ public class Customer extends Person {
 
     public void setTypeCustomer(String typeCustomer) {
         this.typeCustomer = typeCustomer;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @Override

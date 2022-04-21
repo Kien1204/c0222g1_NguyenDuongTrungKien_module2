@@ -19,7 +19,7 @@ public class Main {
             }
             catch (IllegalTriangleException ex) {
                 System.err.println(ex.getMessage());
-                check = true  ;
+                check = true;
             }
             catch (NumberFormatException ex){
                 System.err.println("lỗi nhập chữ");
