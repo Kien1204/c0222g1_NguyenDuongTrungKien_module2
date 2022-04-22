@@ -9,14 +9,15 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException {
         List<CountryInformation> countryInformationsList = new ArrayList<>();
-        List<String[]> listStr = ReaderAndWriter.readFile("src\\_15_io_test_file\\exercise\\read_file_csv\\country_file");
+        List<String[]> listStr = ReaderAndWriter.readFile("src\\_15_io_test_file\\exercise\\read_file_csv\\country_file.csv");
 
+        CountryInformation countryInformation ;
         for (String[] data : listStr) {
-            CountryInformation countryInformation = new CountryInformation(Integer.parseInt(data[0]), data[1], data[2]);
+            countryInformation = new CountryInformation(Integer.parseInt(data[0]), data[1], data[2]);
             countryInformationsList.add(countryInformation);
         }
-        for (CountryInformation countryInformation : countryInformationsList) {
-            System.out.println(countryInformation.toString());
+        for (CountryInformation item : countryInformationsList) {
+            System.out.println(item.toString());
         }
     }
 
