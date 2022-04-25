@@ -33,6 +33,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         System.out.println("nhập giới tính");
         String sex =scanner.nextLine() ;
 
+        System.out.println("nhập ngày sinh");
+        String dateOfBirth = scanner.nextLine();
+
+
         System.out.println("nhập level ");
 
         String level = "";
@@ -118,16 +122,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         String address = scanner.nextLine();
 
 
-        Employee employee = new Employee(id,
-                                        name,
-                                        age,
-                                        sex,
-                                        level,
-                                        position,
-                                        salary,
-                                        idCard,
-                                        email,
-                                        address);
+        Employee employee = new Employee( id, name, age, sex, dateOfBirth, idCard, address, level, position, salary, email);
         employeeList.add(employee);
     }
 
@@ -151,6 +146,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
                 System.out.println("nhập giới tính  ");
                 e.setSex(scanner.nextLine());
+
+                System.out.println("nhập ngày sinh");
+                e.setDateOfBirth(scanner.nextLine());
                 System.out.println("nhập level ");
 
                 String level = "";

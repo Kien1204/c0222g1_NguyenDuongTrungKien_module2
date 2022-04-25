@@ -2,8 +2,8 @@ package case_study_module2.model;
 
 public class Customer extends Person {
     private String typeCustomer;
-    private String address;
-    private String idCard;
+    private String phoneNumber;
+    private String email;
 
     public Customer() {
     }
@@ -12,13 +12,17 @@ public class Customer extends Person {
                     String name,
                     int age,
                     String sex,
+                    String dateOfBirth,
+                    String idCard,
+                    String address,
                     String typeCustomer,
-                    String address) {
-        super(id, name, age, address, sex);
+                    String phoneNumber,
+                    String email) {
+        super(id, name, age, sex, dateOfBirth, idCard, address);
         this.typeCustomer = typeCustomer;
-        this.address=address;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
     }
-
 
     public String getTypeCustomer() {
         return typeCustomer;
@@ -28,18 +32,29 @@ public class Customer extends Person {
         this.typeCustomer = typeCustomer;
     }
 
-    public String getAddress() {
-        return address;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
     public String toString() {
         return "Customer{" +
                 "typeCustomer='" + typeCustomer + '\'' +
+                ", idCard='" +  '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }

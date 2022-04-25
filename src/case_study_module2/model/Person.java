@@ -5,15 +5,21 @@ public class Person {
     private String name;
     private int age;
     private String sex ;
+    private String dateOfBirth ;
+    private String idCard ;
+    private String address;
 
     public Person() {
     }
 
-    public Person(int id, String name, int age, String address, String sex) {
+    public Person(int id, String name, int age,  String sex,String dateOfBirth,String idCard,String address) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.sex = sex;
+        this.dateOfBirth=dateOfBirth;
+        this.idCard=idCard;
+        this.address=address;
 
     }
 
@@ -50,13 +56,40 @@ public class Person {
         this.sex = sex;
     }
 
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getIdCard() {
+        return idCard;
+    }
+
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
-        return
-               " :"+ "id=" + id +
+        return "Person{" +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
-                ", address='" + '\'' +
-                ", sex='" + sex + " ," + '\'';
+                ", sex='" + sex + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", idCard='" + idCard + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 }
