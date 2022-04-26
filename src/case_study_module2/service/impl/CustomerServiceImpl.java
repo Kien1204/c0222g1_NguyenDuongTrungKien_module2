@@ -1,10 +1,8 @@
 package case_study_module2.service.impl;
 
-import case_study_module2.model.Customer;
-import case_study_module2.model.Employee;
+import case_study_module2.model.person.Customer;
 import case_study_module2.service.CustomerService;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;

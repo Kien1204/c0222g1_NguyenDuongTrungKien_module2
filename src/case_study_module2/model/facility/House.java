@@ -1,8 +1,7 @@
-package case_study_module2.model;
+package case_study_module2.model.facility;
 
 public class House extends Facility {
     private String standardHouse;
-    private double areaPool;
     private int floor;
 
     public House() {
@@ -15,29 +14,20 @@ public class House extends Facility {
                  int rentalPeopleMax,
                  String styleRental,
                  String standardHouse,
-                 double areaPool,
                  int floor) {
         super(idFacility, nameService, areaUse, rentalPrice, rentalPeopleMax, styleRental);
         this.standardHouse = standardHouse;
-        this.areaPool = areaPool;
         this.floor = floor;
     }
 
-    public String getStandardVilla() {
+    public String getStandardHouse() {
         return standardHouse;
     }
 
-    public void setStandardVilla(String standardVilla) {
-        this.standardHouse = standardVilla;
+    public void setStandardHouse(String standardHouse) {
+        this.standardHouse = standardHouse;
     }
 
-    public double getAreaPool() {
-        return areaPool;
-    }
-
-    public void setAreaPool(double areaPool) {
-        this.areaPool = areaPool;
-    }
 
     public int getFloor() {
         return floor;
@@ -51,7 +41,6 @@ public class House extends Facility {
     public String toString() {
         return "House {" +super.toString()+
                 "standardVilla='" + standardHouse + '\'' +
-                ", areaPool=" + areaPool +
                 ", floor=" + floor +
                 '}';
     }

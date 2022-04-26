@@ -1,7 +1,8 @@
 package case_study_module2.service.impl;
 
-import case_study_module2.model.Employee;
+import case_study_module2.model.person.Employee;
 import case_study_module2.service.EmployeeService;
+import case_study_module2.service.regex.EmployeeRegex;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,80 +35,15 @@ public class EmployeeServiceImpl implements EmployeeService {
         String sex =scanner.nextLine() ;
 
         System.out.println("nhập ngày sinh");
-        String dateOfBirth = scanner.nextLine();
+        String dateOfBirth = EmployeeRegex.dateOfBirth();
 
 
         System.out.println("nhập level ");
+        String level = EmployeeRegex.level();
 
-        String level = "";
-        System.out.println("1. Trung cấp");
-        System.out.println("2. Cao đẳng ");
-        System.out.println("3. Đại học");
-        System.out.println("4. Sau đại học");
-
-
-        int choose = Integer.parseInt(scanner.nextLine());
-        boolean check = true;
-
-        while (check) {
-            switch (choose) {
-                case 1:
-                    level += "Trung cấp";
-                    check = false;
-                    break;
-                case 2:
-                    level += "Cao đẳng";
-                    check = false;
-                    break;
-                case 3:
-                    level += "Đại học";
-                    check = false;
-                    break;
-                case 4:
-                    level += "Sau đại học";
-                    check = false;
-                    break;
-
-                default:
-                    System.out.println("mời nhập lại");
-            }
-        }
 
         System.out.println("nhập vị trí ");
-        String position = " ";
-        System.out.println("1.Receptionist");
-        System.out.println("2.Waiter  ");
-        System.out.println("3.Supervisor");
-        System.out.println("4.Manager");
-        System.out.println("5.Director");
-
-        int choose1 = Integer.parseInt(scanner.nextLine());
-        boolean check1 = true;
-        while (check1) {
-            switch (choose1) {
-                case 1:
-                    position += "Receptionist";
-                    check1 = false;
-                    break;
-                case 2:
-                    position += "Waiter  ";
-                    check1 = false;
-                    break;
-                case 3:
-                    position += "Supervisor";
-                    check1 = false;
-                    break;
-                case 4:
-                    position += "Manager";
-                    check1 = false;
-                    break;
-                case 5:
-                    position += "Director";
-                    check1= false;
-                    break;
-
-            }
-        }
+        String position = EmployeeRegex.position();
 
         System.out.println("nhập lương");
         int salary = Integer.parseInt(scanner.nextLine());
@@ -120,7 +56,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         System.out.println("nhập địa chỉ ");
         String address = scanner.nextLine();
-
 
         Employee employee = new Employee( id, name, age, sex, dateOfBirth, idCard, address, level, position, salary, email);
         employeeList.add(employee);
@@ -148,78 +83,14 @@ public class EmployeeServiceImpl implements EmployeeService {
                 e.setSex(scanner.nextLine());
 
                 System.out.println("nhập ngày sinh");
-                e.setDateOfBirth(scanner.nextLine());
+                e.setDateOfBirth(EmployeeRegex.dateOfBirth());
                 System.out.println("nhập level ");
 
-                String level = "";
-                System.out.println("1. Trung cấp");
-                System.out.println("2. Cao đẳng ");
-                System.out.println("3. Đại học");
-                System.out.println("4. Sau đại học");
-
-
-                int choose = Integer.parseInt(scanner.nextLine());
-                boolean check1 = true;
-
-                while (check1) {
-                    switch (choose) {
-                        case 1:
-                            level += "Trung cấp";
-                            check1 = false;
-                            break;
-                        case 2:
-                            level += "Cao đẳng";
-                            check1 = false;
-                            break;
-                        case 3:
-                            level += "Đại học";
-                            check1 = false;
-                            break;
-                        case 4:
-                            level += "Sau đại học";
-                            check1 = false;
-                            break;
-
-                        default:
-                            System.out.println("mời nhập lại");
-                    }
-                }
+                String level = EmployeeRegex.level();
                 e.setLevel(level);
 
                 System.out.println("nhập vị trí ");
-                String position = " ";
-                System.out.println("1.Receptionist");
-                System.out.println("2.Waiter  ");
-                System.out.println("3.Supervisor");
-                System.out.println("4.Manager");
-                System.out.println("5.Director");
-
-                int choose1 = Integer.parseInt(scanner.nextLine());
-                boolean check2 = true;
-                while (check2) {
-                    switch (choose1) {
-                        case 1:
-                            position += "Receptionist";
-                            check2 = false;
-                            break;
-                        case 2:
-                            position += "Waiter  ";
-                            check2 = false;
-                            break;
-                        case 3:
-                            position += "Supervisor";
-                            check2 = false;
-                            break;
-                        case 4:
-                            position += "Manager";
-                            check2 = false;
-                            break;
-                        case 5:
-                            position += "Director";
-                            check2= false;
-                            break;
-                    }
-                }
+                String position = EmployeeRegex.position();
                 e.setPosition(position);
 
 
@@ -234,7 +105,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
                 System.out.println("nhập địa chỉ");
                 e.setAddress(scanner.nextLine());
-
                 break;
             }
         }

@@ -1,23 +1,26 @@
 package case_study_module2.service.impl;
 
-import case_study_module2.model.Facility;
-import case_study_module2.model.House;
-import case_study_module2.model.Room;
-import case_study_module2.model.Villa;
+import case_study_module2.model.facility.Facility;
+import case_study_module2.model.facility.House;
+import case_study_module2.model.facility.Room;
+import case_study_module2.model.facility.Villa;
 import case_study_module2.service.FacilityService;
+import case_study_module2.service.regex.FacilityRegex;
 
+import java.io.Serializable;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class FacilityServiceImpl implements FacilityService {
-    private static Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
+public class FacilityServiceImpl implements FacilityService, Serializable {
+
+    static Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
     private static Scanner scanner = new Scanner(System.in);
 
     @Override
     public void display() {
-        for (Map.Entry<Facility,Integer> data : facilityIntegerMap.entrySet()){
-            System.out.println("service"+data.getKey()+ "số lần đã thuê" + data.getValue());
+        for (Map.Entry<Facility, Integer> data : facilityIntegerMap.entrySet()) {
+            System.out.println("service" + data.getKey() + "số lần đã thuê" + data.getValue());
         }
     }
 
@@ -27,34 +30,34 @@ public class FacilityServiceImpl implements FacilityService {
 
     @Override
     public void addNewVilla() {
-        System.out.println("nhập id Facility ");
-        String id = scanner.nextLine();
-
         System.out.println("nhập tên dịch vụ ");
-        String nameService = scanner.nextLine();
+        String name = FacilityRegex.name();
 
-        System.out.println("nhập diện tích  ");
-        double areaUse = Double.parseDouble(scanner.nextLine());
+        System.out.println("nhập id :");
+        String id = FacilityRegex.id();
 
-        System.out.println("nhập giá cho thuê ");
-        int price = Integer.parseInt(scanner.nextLine());
+        System.out.println("nhập diện tích sử dụng");
+        double areaUse = FacilityRegex.areaUse();
 
+        System.out.println("nhập diện tích hồ bơi");
+        double areaPool = FacilityRegex.areaPool();
 
-        System.out.println("nhập số lượng người cho thuê tối đa ");
-        int rentalPeopleMax = Integer.parseInt(scanner.nextLine());
+        System.out.println("nhập giá thuê");
+        int price = FacilityRegex.price();
 
-        System.out.println("nhập loại phòng cho thuê ");
-        String style = scanner.nextLine();
+        System.out.println("nhập số lượng người tối đa");
+        int rentalPeopleMax = FacilityRegex.rentalPeopleMax();
 
-        System.out.println("nhập villa  tiêu chuẩn :");
-        String standardVilla = scanner.nextLine();
+        System.out.println("nhập số tầng");
+        int floor = FacilityRegex.floor();
 
-        System.out.println("nhập diện tích hồ bơi ");
-        double areaPool = Double.parseDouble(scanner.nextLine());
+        System.out.println("nhập kiểu thuê");
+        String styleRental = FacilityRegex.styleRental();
 
-        System.out.println("nhập số tầng ");
-        int floor = scanner.nextInt();
-        Villa villa = new Villa(id, nameService, areaUse, price, rentalPeopleMax, style, standardVilla, areaUse, floor);
+        System.out.println("nhập phòng tiêu chuẩn");
+        String standardVilla = FacilityRegex.standardVilla();
+
+        Villa villa = new Villa(name, id, areaUse, price, rentalPeopleMax, styleRental, standardVilla, areaPool, floor);
         facilityIntegerMap.put(villa, 0);
         System.out.println("đã thêm mới thành công");
     }
@@ -62,65 +65,62 @@ public class FacilityServiceImpl implements FacilityService {
 
     @Override
     public void addNewHouse() {
-        System.out.println("nhập id Facility ");
-        String id = scanner.nextLine();
-
         System.out.println("nhập tên dịch vụ ");
-        String nameService = scanner.nextLine();
+        String name = FacilityRegex.name();
 
-        System.out.println("nhập diện tích  ");
-        double areaUse = Double.parseDouble(scanner.nextLine());
+        System.out.println("nhập id :");
+        String id = FacilityRegex.id();
 
-        System.out.println("nhập giá cho thuê ");
-        int price = Integer.parseInt(scanner.nextLine());
+        System.out.println("nhập diện tích sử dụng");
+        double areaUse = FacilityRegex.areaUse();
 
+        System.out.println("nhập giá thuê");
+        int price = FacilityRegex.price();
 
-        System.out.println("nhập số lượng người cho thuê tối đa ");
-        int rentalPeopleMax = Integer.parseInt(scanner.nextLine());
+        System.out.println("nhập số lượng người tối đa");
+        int rentalPeopleMax = FacilityRegex.rentalPeopleMax();
 
-        System.out.println("nhập loại phòng cho thuê ");
-        String style = scanner.nextLine();
+        System.out.println("nhập số tầng");
+        int floor = FacilityRegex.floor();
 
-        System.out.println("nhập villa  tiêu chuẩn :");
-        String standardVilla = scanner.nextLine();
+        System.out.println("nhập kiểu thuê");
+        String styleRental = FacilityRegex.styleRental();
 
-        System.out.println("nhập diện tích hồ bơi ");
-        double areaPool = Double.parseDouble(scanner.nextLine());
+        System.out.println("nhập phòng tiêu chuẩn");
+        String standardVilla = FacilityRegex.standardVilla();
 
-        System.out.println("nhập số tầng ");
-        int floor = Integer.parseInt(scanner.nextLine());
-        House house = new House(id, nameService, areaUse, price, rentalPeopleMax, style, standardVilla, areaUse, floor);
+        House house = new House(name, id, areaUse, price, rentalPeopleMax, styleRental, standardVilla, floor);
         facilityIntegerMap.put(house, 0);
         System.out.println("đã thêm mới thành công");
     }
 
     @Override
     public void addNewRoom() {
-        System.out.println("nhập id Facility ");
-        String id = scanner.nextLine();
-
         System.out.println("nhập tên dịch vụ ");
-        String nameService = scanner.nextLine();
+        String name = FacilityRegex.name();
 
-        System.out.println("nhập diện tích  ");
-        double areaUse = Double.parseDouble(scanner.nextLine());
+        System.out.println("nhập id :");
+        String id = FacilityRegex.id();
 
-        System.out.println("nhập giá cho thuê ");
-        int price = Integer.parseInt(scanner.nextLine());
+        System.out.println("nhập diện tích sử dụng");
+        double areaUse = FacilityRegex.areaUse();
 
+        System.out.println("nhập giá thuê");
+        int price = FacilityRegex.price();
 
-        System.out.println("nhập số lượng người cho thuê tối đa ");
-        int rentalPeopleMax = Integer.parseInt(scanner.nextLine());
+        System.out.println("nhập số lượng người tối đa");
+        int rentalPeopleMax = FacilityRegex.rentalPeopleMax();
 
-        System.out.println("nhập cỡ phòng cho thuê ");
-        String style = scanner.nextLine();
+        System.out.println("nhập kiểu thuê");
+        String styleRental = FacilityRegex.styleRental();
 
-        System.out.println("nhập room  tiêu chuẩn :");
-        String standardVilla = scanner.nextLine();
+        System.out.println("nhập phòng tiêu chuẩn");
+        String standardVilla = FacilityRegex.standardVilla();
 
-        System.out.println("nhập lại phòng cho  thuê");
-        String styleRoom = scanner.nextLine();
-        Room room = new Room(id,nameService,areaUse,price,rentalPeopleMax,style,styleRoom);
+        System.out.println("nhập các dịch vụ miễn phí ");
+        String freeService = FacilityRegex.freeService();
+
+        Room room = new Room(name,id,areaUse,price,rentalPeopleMax,styleRental,freeService);
         facilityIntegerMap.put(room, 0);
         System.out.println("đã thêm mới thành công");
     }
